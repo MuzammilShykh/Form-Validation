@@ -1,0 +1,14 @@
+
+.container
+{
+
+    width: 500px;
+    clear: both;
+}
+label{
+    display: block;
+    float: left;
+    width : 100px;    
+  }
+ 
+  
