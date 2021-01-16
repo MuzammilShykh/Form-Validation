@@ -31,7 +31,7 @@ function validateform() {
      var country = document.forms["myform"]["country"].value;
      var zipCode = document.forms["myform"]["zipcode"].value;
      var email = document.forms["myform"]["email"].value;
-     var gender = document.forms["myform"]["gender"].value;
+     var gender = document.forms["myform"]["gender"];
      var language = document.forms["myform"]["language"];
 // code .........
 
@@ -119,11 +119,15 @@ else if (email.indexOf("@") == -1) {
 }
 
 // Gender
-else if ( gender == "") {
-  genderOutput += "<small> Please Select One. <small>"
-   document.getElementById("genderpara").innerHTML = genderOutput;
-   return false;  
+for (let index = 0; index < gender.length; index++) {
+   if ( gender[index].checked == true) {
+      return true;
+    }
+    genderOutput += "<small> Please Select One. <small>"
+    document.getElementById("genderpara").innerHTML = genderOutput;
+    return false;  
 }
+ 
 // languages
 for (let index = 0; index < language.length; index++) {
    if (language[index].checked == true) {
