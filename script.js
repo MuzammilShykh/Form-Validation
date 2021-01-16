@@ -1,0 +1,177 @@
+// function onClickHandler() {
+ 
+//     var output = ""
+// var userId = document.getElementById("userid").Value;
+
+// if (userId.length < 5 ||  userId.length > 12) {
+//     console.log("hello world");
+//     output += "<small>user id must be of length 5 to 12 <small>"
+// }
+// document.getElementById("idpara").innerHTML = output;
+    
+// }
+
+function validateform() {
+   // variable declaration
+    var letters = /^[A-Za-z]+$/;
+    var numeric = /^[0-9]+$/ ;
+  var  nameOutput = "";
+  var userOutput = "";
+  var passOutput = "";
+  var countryOutput = "";
+  var zipOutput = "";
+  var emailOutput = "";
+  var genderOutput = "";
+  // Access  html tags 
+
+     var userId = document.forms["myform"]["userid"].value;
+     var password = document.forms["myform"]["password"].value;
+     var name = document.forms["myform"]["name"].value;
+     var country = document.forms["myform"]["country"].value;
+     var zipCode = document.forms["myform"]["zipcode"].value;
+     var email = document.forms["myform"]["email"].value;
+     var gender = document.forms["myform"]["gender"].value;
+// code .........
+
+// user id 
+     if (userId == "") {
+       userOutput += "<small> Must be filled out. <small>"
+       document.getElementById("idpara").innerHTML = userOutput;
+       return false;
+      }
+
+
+       else if (userId.length < 5 || userId.length > 12 ) {
+        userOutput += "<small> Must be of length 5 to 12. <small>"
+        document.getElementById("idpara").innerHTML = userOutput;
+        
+        return false;  
+   // password
+     }
+     else if (password == "") {
+        passOutput += "<small> Must be filled out. <small>"
+        document.getElementById("passpara").innerHTML = passOutput;
+        return false;  
+     }
+
+     else if (password.length < 7 || password.length > 12 ) {
+        passOutput += "<small> Must be of length 7 to 12. <small>"
+        document.getElementById("passpara").innerHTML = passOutput;
+        return false;  
+     }
+// Name
+     else if ( name == "") {
+        nameOutput += "<small> Must be filled out. <small>"
+        document.getElementById("namepara").innerHTML = nameOutput;
+        return false;  
+     }
+     
+
+     else if (!name.match(letters)) {
+        nameOutput += "<small>Please enter only alphabets.<small>"
+        document.getElementById("namepara").innerHTML = nameOutput;
+        return false;  
+     }
+    // Country
+     else if ( country == "country select") {
+      countryOutput += "<small> Must select a country. <small>"
+
+      document.getElementById("countrypara").innerHTML = countryOutput;
+      return false;  
+   }
+// zipcode
+   else if ( zipCode == "") {
+      zipOutput += "<small> Must be filled out. <small>"
+      document.getElementById("zippara").innerHTML =  zipOutput;
+      return false;  
+   }
+   
+
+   else if (!zipCode.match(numeric)) {
+      zipOutput += "<small>Must be numeric only.<small>"
+      document.getElementById("zippara").innerHTML =  zipOutput;
+      return false;  
+   }
+
+
+   else if ( zipCode == "") {
+      zipOutput += "<small> Must be filled out. <small>"
+      document.getElementById("zippara").innerHTML =  zipOutput;
+      return false;  
+   }
+   
+
+// Email
+
+
+else if ( email == "") {
+   emailOutput += "<small> Must be filled out. <small>"
+   document.getElementById("emailpara").innerHTML =  emailOutput;
+   return false;  
+}
+
+else if (email.indexOf("@") == -1) {
+   emailOutput += "<small> Not a valid email. [use:@example.com] <small>"
+   document.getElementById("emailpara").innerHTML =  emailOutput;
+   return false;  
+}
+
+
+else if ( gender == "") {
+  genderOutput += "<small> Must be filled out. <small>"
+   document.getElementById("genderpara").innerHTML = genderOutput;
+   return false;  
+}
+
+
+
+
+
+    // if (userId.length < 5 || userId.length > 12 ) {
+    //     userOutput += "<small>Must be of length 5 to 12 <small>"
+      
+        
+    // }
+    // document.getElementById("idpara").innerHTML = userOutput;
+    //    var passOutput = ""
+    // var password = document.getElementById("password").value;
+    // if (password == "") {
+    //    passOutput += "<small>Password required<small>"
+    //    document.getElementById("passpara").innerHTML = passOutput;
+         
+    // }
+//       if (password.length < 7 || password.length > 12 ) {
+//         passOutput += "<small>Must be of length 7 to 12 <small>"
+//           document.getElementById("passpara").innerHTML = passOutput;
+//           return false;
+
+//   }
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
