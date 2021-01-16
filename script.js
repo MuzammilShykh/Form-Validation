@@ -15,13 +15,14 @@ function validateform() {
    // variable declaration
     var letters = /^[A-Za-z]+$/;
     var numeric = /^[0-9]+$/ ;
-  var  nameOutput = "";
-  var userOutput = "";
+    var userOutput = "";
+   var  nameOutput = "";
   var passOutput = "";
   var countryOutput = "";
   var zipOutput = "";
   var emailOutput = "";
   var genderOutput = "";
+  var langOutput = "";
   // Access  html tags 
 
      var userId = document.forms["myform"]["userid"].value;
@@ -31,6 +32,7 @@ function validateform() {
      var zipCode = document.forms["myform"]["zipcode"].value;
      var email = document.forms["myform"]["email"].value;
      var gender = document.forms["myform"]["gender"].value;
+     var language = document.forms["myform"]["language"];
 // code .........
 
 // user id 
@@ -111,19 +113,44 @@ else if ( email == "") {
 }
 
 else if (email.indexOf("@") == -1) {
-   emailOutput += "<small> Not a valid email. [use:@example.com] <small>"
+   emailOutput += "<small> Not a valid Email. [use:@example.com] <small>"
    document.getElementById("emailpara").innerHTML =  emailOutput;
    return false;  
 }
 
-
+// Gender
 else if ( gender == "") {
-  genderOutput += "<small> Must be filled out. <small>"
+  genderOutput += "<small> Please Select One. <small>"
    document.getElementById("genderpara").innerHTML = genderOutput;
    return false;  
 }
+// languages
+for (let index = 0; index < language.length; index++) {
+   if (language[index].checked == true) {
+      return true
+   }
+   
+   langOutput += "<small> Please Select Atleast One. <small>"
+    document.getElementById("langpara").innerHTML = langOutput;
+    return false; 
+}
 
 
+
+
+
+
+
+
+
+
+// else if (language == "") {
+//    langOutput += "<small> Please Select Atleast One. <small>"
+//     document.getElementById("langpara").innerHTML = langOutput;
+//     return false;  
+//  }
+ 
+ 
 
 
 
